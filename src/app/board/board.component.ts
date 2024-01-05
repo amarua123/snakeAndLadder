@@ -58,7 +58,7 @@ export class BoardComponent {
     const standingplayers = []
     for(let i = 0; i < this.noOfPlayer; i++){
       if(cell == this.playersPos[i]){
-        standingplayers.push({"img": "../assets/"+this.players[i]+".png", "style": initialStyle+pos[i]});
+        standingplayers.push({"img": "assets/"+this.players[i]+".png", "style": initialStyle+pos[i]});
       }
     }
     return standingplayers;
@@ -68,9 +68,9 @@ export class BoardComponent {
     const start = this.snakesAndLadderStart[index];
     const end = this.snakesAndLadderEnd[index];
     if(start > end){
-      return {"img": "../assets/snake.png", "value": end, "style": "position: absolute; right:0; bottom:0;font-weight: 700; font-size: 1.5rem;color:red;"};
+      return {"img": "assets/snake.png", "value": end, "style": "position: absolute; right:0; bottom:0;font-weight: 700; font-size: 1.5rem;color:red;"};
     }else{
-      return {"img": "../assets/ladder.png", "value": end, "style": "position: absolute; right:0; bottom:0;font-weight: 700; font-size: 1.5rem;color:green;"};
+      return {"img": "assets/ladder.png", "value": end, "style": "position: absolute; right:0; bottom:0;font-weight: 700; font-size: 1.5rem;color:green;"};
     }
   }
   getCurrentPlayerClass(no: number){
