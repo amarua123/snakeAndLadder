@@ -2,10 +2,8 @@
 <div [innerHTML]="msg" class="msg"></div>
 <div class="board">
   <div *ngFor="let cell of cells" class="cell" style="font-weight: 500; font-size: 1rem;">
-    <!-- {{ playerPosition === cell ? "" : cell }} -->
     {{ !isExists(cell) && !isSnakeorLadderExists(cell) ? cell : "" }}
-    <!-- <div *ngIf="playerPosition === cell" class="player">{{ players[currentPlayer] }}</div> -->
-    <!-- <div *ngIf="isExists(cell) !== ''" [class]="isExists(cell)">{{ isExists(cell) }}</div> -->
+    
     <div *ngIf="isExists(cell)" class="cell">
       <div style="position: absolute;">
 
@@ -29,9 +27,9 @@
   
   <button class="rotate" (click)="rollDice();rotate();ref.play()" [disabled]="diceRolled">{{diceRolled ? "rolling" : "Roll
     Dice"}}</button>
-  <div [class]="getCurrentPlayerClass(1)">P1</div>
-  <div [class]="getCurrentPlayerClass(2)">P2</div>
-  <div [class]="getCurrentPlayerClass(3)">P3</div>
-  <div [class]="getCurrentPlayerClass(4)">P4</div>
-  <audio #ref src="../assets/dice-sound.mp3"></audio>
+  <div [class]="getCurrentPlayerClass(1)"><img src="assets/Player-1.png"  style="height: 45px; width: 45px;"></div>
+  <div [class]="getCurrentPlayerClass(2)"><img src="assets/Player-2.png"  style="height: 45px; width: 45px;"></div>
+  <div [class]="getCurrentPlayerClass(3)"><img src="assets/Player-3.png"  style="height: 45px; width: 45px;"></div>
+  <div [class]="getCurrentPlayerClass(4)"><img src="assets/Player-4.png"  style="height: 45px; width: 45px;"></div>
+  <audio #ref src="assets/dice-sound.mp3"></audio>
 </div>

@@ -14,7 +14,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class BoardComponent {
   rotateState = 'default';
-  cells: number[] = Array.from({ length: 100 }, (_, i) => i + 1);
+  cells: number[] = [];
   noOfPlayer = 4;
   players = ['Player-1', 'Player-2', 'Player-3', 'Player-4']
   playersPos:number[] = []
@@ -28,11 +28,12 @@ export class BoardComponent {
     for(let i = 0; i < this.noOfPlayer; i++){
       this.playersPos.push(1);
     }
-    for (let i = 10; i < 100; i += 20) {
-      for (let j = 0, k = 9; j < k; j++, k--) {
-        let temp = this.cells[i+j];
-        this.cells[i+j] = this.cells[i+k];
-        this.cells[i+k] = temp;
+    for (let row = 10; row >= 1; row--) {
+      const isReverse = (row % 2 !== 0);
+      for (let col = 1; col <= 10; col++) {
+        const baseCell = (row - 1) * 10 + col;
+        const cell = isReverse ? baseCell + 9 - 2 * (col - 1) : baseCell;
+        this.cells.push(cell);
       }
     }
   }
