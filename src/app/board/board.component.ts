@@ -15,7 +15,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class BoardComponent {
   rotateState = 'default';
   cells: number[] = Array.from({ length: 100 }, (_, i) => i + 1);
-  noOfPlayer = 1;
+  noOfPlayer = 4;
   players = ['Player-1', 'Player-2', 'Player-3', 'Player-4']
   playersPos:number[] = []
   currentPlayer = 0;
